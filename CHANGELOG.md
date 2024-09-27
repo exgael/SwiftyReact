@@ -1,5 +1,11 @@
 # @exgael/swiftyreact
 
+## 0.0.3
+
+### Patch Changes
+
+- 97e1cac: added lib dependency
+
 ## 0.0.2
 
 ### Patch Changes
