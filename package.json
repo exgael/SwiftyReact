@@ -2,6 +2,10 @@
   "name": "@exgael/swiftyreact",
   "version": "0.0.1",
   "main": "dist/index.js",
+  "files": [
+    "dist",
+     "README.md"
+  ],
   "scripts": {
     "init": "make install",
     "build": "webpack",
