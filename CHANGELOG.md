@@ -1,5 +1,11 @@
 # @exgael/swiftyreact
 
+## 0.0.2
+
+### Patch Changes
+
+- ef77c90: lib setup corr.
+
 ## 0.0.1
 
 ### Patch Changes
