@@ -1,12 +1,24 @@
 {
   "name": "@exgael/swiftyreact",
-  "version": "0.0.4",
+  "author": "exgael",
+  "description": "SwiftUI style components for ReactJS",
+  "version": "0.0.5",
+  "type": "module",
   "main": "dist/index.js",
-  "files": [
-    "dist",
-    "README.md"
-  ],
-  "module": "./dist/index.js",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/exgael/SwiftyReact.git"
+  },
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "init": "make install",
     "build": "webpack",
@@ -26,17 +38,7 @@
     "SwiftUI",
     "ReactJS"
   ],
-  "author": "exgael",
-  "license": "ISC",
-  "description": "SwiftUI style components for ReactJS",
-  "publishConfig": {
-    "access": "public"
-  },
-  "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/exgael/SwiftyReact.git"
-  },
+
   "dependencies": {
     "@changesets/cli": "^2.27.8",
     "prop-types": "^15.8.1",

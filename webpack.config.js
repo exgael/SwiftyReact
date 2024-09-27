@@ -2,33 +2,37 @@ import path from 'path';
 import nodeExternals from 'webpack-node-externals';
 
 export default {
-  entry: './src/index.js', // main entry point of your component library
-  mode: 'production', // Set the mode to production
+  entry: './src/index.js',
+  mode: 'production',
   output: {
     path: path.resolve('dist'),
-    library: 'SwiftyReact', // Library name
     filename: 'index.js',
-    libraryTarget: 'umd', // This will make it compatible with both CommonJS and ES modules
-    umdNamedDefine: true, // This is required when using UMD library
-    globalObject: 'this', // This will fix the window is not defined error
+    library: {
+      type: 'module'
+    }
   },
-  externals: [nodeExternals()], // Exclude React and ReactDOM from the bundle
+  experiments: {
+    outputModule: true
+  },
+  externals: [nodeExternals()],
   module: {
     rules: [
       {
-        test: /\.jsx?$/, // Check for .js or .jsx files
-        exclude: /node_modules/, // Don't transpile node_modules
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
         use: {
-          loader: 'esbuild-loader', // No Babel, but using ESBuild for fast builds
+          loader: 'babel-loader',
           options: {
-            loader: 'jsx', // Load JSX files
-            target: 'es2015', // Target modern JavaScript (ES6+)
-          },
+            presets: [
+              ['@babel/preset-env', { modules: false }],
+              '@babel/preset-react'
+            ]
+          }
         },
       },
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx'], // Resolve these extensions
+    extensions: ['.js', '.jsx'],
   },
 };
