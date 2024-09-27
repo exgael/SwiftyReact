@@ -1,5 +1,11 @@
 # @exgael/swiftyreact
 
+## 0.0.6
+
+### Patch Changes
+
+- 46e6c3f: yacorr.
+
 ## 0.0.5
 
 ### Patch Changes
