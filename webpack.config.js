@@ -6,8 +6,11 @@ export default {
   mode: 'production', // Set the mode to production
   output: {
     path: path.resolve('dist'),
+    library: 'SwiftyReact', // Library name
     filename: 'index.js',
     libraryTarget: 'umd', // This will make it compatible with both CommonJS and ES modules
+    umdNamedDefine: true, // This is required when using UMD library
+    globalObject: 'this', // This will fix the window is not defined error
   },
   externals: [nodeExternals()], // Exclude React and ReactDOM from the bundle
   module: {
