@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "@changesets/cli": "^2.27.8",
+    "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "webpack": "^5.95.0",
@@ -52,6 +53,10 @@
     "eslint-plugin-react": "^7.37.0",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": [
