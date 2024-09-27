@@ -1,10 +1,10 @@
-const path = require('path');
-const nodeExternals = require('webpack-node-externals');
+import path from 'path';
+import nodeExternals from 'webpack-node-externals';
 
-module.exports = {
+export default {
   entry: './src/index.js', // main entry point of your component library
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve('dist'),
     filename: 'index.js',
     libraryTarget: 'umd', // This will make it compatible with both CommonJS and ES modules
   },
