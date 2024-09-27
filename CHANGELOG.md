@@ -1,5 +1,11 @@
 # @exgael/swiftyreact
 
+## 0.0.4
+
+### Patch Changes
+
+- 4883d55: yacorr. trying to make the component importable
+
 ## 0.0.3
 
 ### Patch Changes
