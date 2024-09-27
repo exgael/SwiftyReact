@@ -1,10 +1,10 @@
 {
   "name": "@exgael/swiftyreact",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/index.js",
   "files": [
     "dist",
-     "README.md"
+    "README.md"
   ],
   "scripts": {
     "init": "make install",
