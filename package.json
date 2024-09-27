@@ -8,7 +8,8 @@
     "changeset": "changeset",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint 'src/**/*.{js,jsx}'",
-    "lint:fix": "eslint 'src/**/*.{js,jsx}' --fix"
+    "lint:fix": "eslint 'src/**/*.{js,jsx}' --fix",
+    "release": "npm run build && changeset publish"
   },
   "keywords": [
     "Swift",
