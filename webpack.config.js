@@ -1,0 +1,30 @@
+const path = require('path');
+const nodeExternals = require('webpack-node-externals');
+
+module.exports = {
+  entry: './src/index.js', // main entry point of your component library
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'index.js',
+    libraryTarget: 'umd', // This will make it compatible with both CommonJS and ES modules
+  },
+  externals: [nodeExternals()], // Exclude React and ReactDOM from the bundle
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/, // Check for .js or .jsx files
+        exclude: /node_modules/, // Don't transpile node_modules
+        use: {
+          loader: 'esbuild-loader', // No Babel, but using ESBuild for fast builds
+          options: {
+            loader: 'jsx', // Load JSX files
+            target: 'es2015', // Target modern JavaScript (ES6+)
+          },
+        },
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'], // Resolve these extensions
+  },
+};

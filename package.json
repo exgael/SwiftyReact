@@ -1,0 +1,54 @@
+{
+  "name": "swiftyreact",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "init": "make install",
+    "build": "webpack",
+    "changeset": "changeset",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint 'src/**/*.{js,jsx}' --fix"
+  },
+  "keywords": [
+    "Swift",
+    "React",
+    "VStack",
+    "Hstack",
+    "ZStack",
+    "SwiftUI",
+    "ReactJS"
+  ],
+  "author": "exgael",
+  "license": "ISC",
+  "description": "SwiftUI style components for ReactJS",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/exgael/SwiftyReact.git"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.27.8",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "eslint": "^9.11.1",
+    "eslint-plugin-react": "^7.37.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}
