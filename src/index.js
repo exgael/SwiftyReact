@@ -1,1 +1,3 @@
-export { default as Button } from './Button.js';
+import Button from './Button.js';
+
+export { Button };
