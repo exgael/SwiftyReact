@@ -6,6 +6,7 @@
     "dist",
     "README.md"
   ],
+  "module": "./dist/index.js",
   "scripts": {
     "init": "make install",
     "build": "webpack",
