@@ -21,7 +21,7 @@
   },
   "scripts": {
     "init": "make install",
-    "build": "webpack",
+    "build": "webpack && babel src --out-dir dist --extensions \".js,.jsx\"",
     "changeset": "changeset",
     "version": "changeset version",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -38,19 +38,23 @@
     "SwiftUI",
     "ReactJS"
   ],
-
   "dependencies": {
     "@changesets/cli": "^2.27.8",
     "prop-types": "^15.8.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "webpack": "^5.95.0",
     "webpack-cli": "^5.1.4",
     "webpack-node-externals": "^3.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.25.6",
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-react": "^7.24.7",
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
+    "babel-loader": "^9.2.1",
     "esbuild-loader": "^4.2.2",
     "eslint": "^9.11.1",
     "eslint-plugin-react": "^7.37.0",
