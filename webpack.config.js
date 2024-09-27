@@ -3,6 +3,7 @@ import nodeExternals from 'webpack-node-externals';
 
 export default {
   entry: './src/index.js', // main entry point of your component library
+  mode: 'production', // Set the mode to production
   output: {
     path: path.resolve('dist'),
     filename: 'index.js',
