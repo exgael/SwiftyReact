@@ -1,1 +1,1 @@
-export { View, VStack, HStack, Spacer } from './components';
+export { View, VStack, HStack, Spacer, ZStack } from './components';

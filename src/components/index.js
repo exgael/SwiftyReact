@@ -1,2 +1,2 @@
 export { View } from './core';
-export { VStack, HStack, Spacer } from './layout';
+export { VStack, HStack, Spacer, ZStack } from './layout';
