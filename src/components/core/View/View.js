@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { crossAxisAlignmentMapping, mainAxisAlignmentMapping } from '../../../utils/alignmentMapping';
-import { ViewContext } from './ViewContext';
-import { useViewModel } from './ViewModel';
+import { crossAxisAlignmentMapping, mainAxisAlignmentMapping } from '../../../utils/index.js';
+import { ViewContext } from './ViewContext.js';
+import { useViewModel } from './ViewModel.js';
 
 const listColors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 

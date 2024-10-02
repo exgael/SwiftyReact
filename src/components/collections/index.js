@@ -1,1 +1,1 @@
-export { ForEach } from './ForEach';
+export { ForEach } from './ForEach/index.js';

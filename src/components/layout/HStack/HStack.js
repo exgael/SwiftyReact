@@ -1,5 +1,5 @@
-import {crossAxisAlignmentMapping, mainAxisAlignmentMapping} from "../../../utils/alignmentMapping.js";
-import {StackContext} from "../StackContext";
+import {crossAxisAlignmentMapping, mainAxisAlignmentMapping} from "../../../utils/index.js";
+import {StackContext} from "../StackContext/index.js";
 import {View} from "../../core/index.js";
 import propTypes from 'prop-types';
 
