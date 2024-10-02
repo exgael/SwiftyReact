@@ -137,6 +137,8 @@ export const EnvironmentProvider = ({ children }) => {
     const overlayCounter = useRef(0);
     const [isDarkMode, setIsDarkMode] = useState(false); // Track theme mode (light/dark)
     const [theme, setTheme] = useState(lightTheme); // Default theme
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [isPWA, setIsPWA] = useState(false);
 
     // Automatically switch to dark mode based on user preference or manual toggle
     useEffect(() => {
@@ -180,38 +182,38 @@ export const EnvironmentProvider = ({ children }) => {
     const registerOverlay = useCallback(() => {
         const id = overlayCounter.current++;
         setOverlays(prevOverlays => {
-            // Avoid unnecessary state updates if overlay already exists
             if (prevOverlays[id]) return prevOverlays;
-            return { ...prevOverlays, [id]: true };
+            return { ...prevOverlays, [id]: { visible: true } };
         });
         return id;
-    }, [setOverlays, overlayCounter]);
+    }, []);
 
     // Dismiss overlay
     const dismiss = id => {
         setOverlays(prevOverlays => {
-            if (prevOverlays[id] === false) return prevOverlays; // Avoid unnecessary updates
-            return { ...prevOverlays, [id]: false };
+            if (!prevOverlays[id]?.visible) return prevOverlays;
+            return { ...prevOverlays, [id]: { ...prevOverlays[id], visible: false } };
         });
     };
 
+
     // Present modal
-    const presentModal = content => {
+    const presentModal = useCallback(content => {
         const id = registerOverlay();
         setOverlays(prevOverlays => ({
             ...prevOverlays,
             [id]: { visible: true, type: 'modal', content },
         }));
-    };
+    }, [registerOverlay]);
 
     // Present alert
-    const presentAlert = message => {
+    const presentAlert = useCallback(message => {
         const id = registerOverlay();
         setOverlays(prevOverlays => ({
             ...prevOverlays,
             [id]: { visible: true, type: 'alert', message },
         }));
-    };
+    }, [registerOverlay]);
 
     // Update theme based on dark mode
     useEffect(() => {
@@ -219,15 +221,36 @@ export const EnvironmentProvider = ({ children }) => {
     }, [isDarkMode]);
 
     // Toggle theme manually
-    const toggleTheme = () => {
+    const toggleTheme = useCallback(() => {
         setIsDarkMode(prevMode => !prevMode);
-    };
+    }, []);
 
     const isOverlayVisible = id => overlays[id]?.visible;
 
     const typography = getTypography(textSize);
     const colorScheme = isDarkMode ? 'dark' : 'light';
     const statusBarStyle = isDarkMode ? 'light-content' : 'dark-content';
+
+    useEffect(() => {
+        const handleResize = () => setWindowWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+
+        // Check if the app is installed as a PWA
+        const isStandalonePWA = () => {
+            return (
+                typeof window !== 'undefined' &&
+                window.matchMedia('(display-mode: standalone)').matches
+            );
+        };
+
+        setIsPWA(isStandalonePWA());
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+
 
     return (
         <EnvironmentContext.Provider
@@ -247,6 +270,10 @@ export const EnvironmentProvider = ({ children }) => {
                 typography,
                 toggleTheme,
                 statusBarStyle,
+                isMobile: windowWidth < 768,
+                isTablet: windowWidth >= 768 && windowWidth < 1024,
+                isDesktop: windowWidth >= 1024,
+                isPWA,
             }}
         >
             {children}
