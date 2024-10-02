@@ -109,7 +109,7 @@ const getTypography = textSize => {
 };
 
 export const EnvironmentContext = createContext({
-    dismiss: () => {}, // Dismiss function
+    dismiss: id => {}, // Function to dismiss an overlay by ID
     presentModal: () => {}, // Present a modal
     presentAlert: () => {}, // Present an alert
     isOverlayVisible: id => true, // Check visibility
