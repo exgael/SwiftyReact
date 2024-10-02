@@ -2,7 +2,7 @@
   "name": "@exgael/swiftyreact",
   "author": "exgael",
   "description": "SwiftUI style components for ReactJS",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
