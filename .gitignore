@@ -24,6 +24,7 @@ chrome-user-data
 *.swp
 *.swo
 
+src2/
 dist/
 .husky/
 packages/react-devtools-core/dist
