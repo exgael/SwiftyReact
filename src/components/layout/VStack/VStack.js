@@ -1,3 +1,4 @@
+import React from 'react';
 import {crossAxisAlignmentMapping, mainAxisAlignmentMapping} from "../../../utils/index.js";
 import {StackContext} from "../StackContext/index.js";
 import {View} from "../../core/index.js";

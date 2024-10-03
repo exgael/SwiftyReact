@@ -1,3 +1,4 @@
+import React from 'react';
 import {StackContext} from "../StackContext/index.js";
 import {View} from "../../core/index.js";
 import propTypes from 'prop-types';

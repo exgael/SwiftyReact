@@ -1,3 +1,4 @@
+import React from 'react';
 import {useContext} from "react";
 import {StackContext} from "../StackContext/index.js";
 import {ViewContext} from "../../core/View/ViewContext.js";
