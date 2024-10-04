@@ -11,7 +11,7 @@ export default {
         },
     },
     args: {
-        numberOfChildren: 3,
+        numberOfChildren: 5,
     }
 };
 
@@ -41,12 +41,7 @@ Playground.args = {
     opacity: 1,
     cornerRadius: "10px",
     frame: {
-        width: "300px",
-        height: "auto",
-        maxHeight: "auto",
-        maxWidth: "300px",
-        minHeight: "auto",
-        minWidth: "300px",
+        width: "100px",
     },
     padding: {
         top: "20px",
@@ -69,11 +64,11 @@ Playground.args = {
     shadow: {
         color: "black",
         offset: {
-            width: "5px",
-            height: "5px",
+            width: 5,
+            height: 5,
         },
         opacity: 0.5,
-        radius: "5px"
+        radius: 5
     },
     accessibilityHint: "This is a VStack",
     accessibilityLabel: "VStack"
