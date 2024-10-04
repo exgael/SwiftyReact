@@ -72,21 +72,8 @@ export const viewWithChildrenPropTypes = {
 
 export const stackPropTypes = {
     ...viewWithChildrenPropTypes,
-    alignment: PropTypes.oneOf(['leading', 'center', 'trailing', 'stretch']),
     distribution: PropTypes.oneOf(['leading', 'center', 'trailing', 'spaceBetween', 'spaceAround', 'spaceEvenly']),
     spacing: PropTypes.string,
-};
-
-export const viewDefaultProps = {
-    opacity: 1,
-    debugBorder: false
-};
-
-export const stackDefaultProps = {
-    ...viewDefaultProps,
-    alignment: 'center',
-    distribution: 'center',
-    spacing: 0
 };
 
 export const stackViewPropTypes = {
