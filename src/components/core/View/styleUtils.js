@@ -183,11 +183,11 @@ export const generateStackStyles = (
 
     // Handle expansion
     if (shouldExpandHorizontally) {
-        stackStyles.width = '100%';
+        stackStyles.width = frame?.width ? frame.width : '100%';
     }
 
     if (shouldExpandVertically) {
-        stackStyles.height = '100%';
+        stackStyles.height = frame?.height ? frame.height : '100%';
     }
 
     // Merge base styles and stack-specific styles
