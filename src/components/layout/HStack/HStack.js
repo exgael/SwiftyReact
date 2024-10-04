@@ -1,4 +1,4 @@
-import {stackDefaultProps, stackPropTypes} from "../../core/View/viewPropTypes.js";
+import {stackPropTypes} from "../../core/View/viewPropTypes.js";
 import ContainerView from "../../core/View/ContainerView.js";
 
 /**
@@ -11,6 +11,5 @@ const HStack = ({children, ...props}) => ContainerView({
 });
 
 HStack.propTypes = stackPropTypes;
-HStack.defaultProps = stackDefaultProps;
 
 export default HStack;
