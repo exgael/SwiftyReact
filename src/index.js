@@ -1,5 +1,5 @@
 export {
-    View,
+    Scene,
     VStack,
     HStack,
     Spacer,
