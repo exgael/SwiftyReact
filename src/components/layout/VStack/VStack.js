@@ -1,12 +1,12 @@
 import {stackPropTypes} from "../../core/View/viewPropTypes.js";
-import ContainerView from "../../core/View/ContainerView.js";
+import {ContainerView} from "../../core/View/index.js";
 
 /**
  * VStack component is a vertical stack layout component
  */
 const VStack = ({children, ...props}) => ContainerView({
     children,
-    direction: "column",
+    axis: "column",
     ...props
 });
 

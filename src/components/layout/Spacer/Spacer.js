@@ -5,13 +5,13 @@ import {ViewContext} from "../../core/View/ViewContext.js";
 import PropTypes from "prop-types";
 
 const Spacer = ({debugBorder, minSize = '0px'}) => {
-    const { direction } = useContext(StackContext);
+    const { axis } = useContext(StackContext);
     const { requestExpansion } = useContext(ViewContext);
 
     React.useEffect(() => {
         // Spacer requests expansion in its stack’s direction (horizontal or vertical)
-        requestExpansion(direction);
-    }, [direction, requestExpansion]);
+        requestExpansion(axis);
+    }, [axis, requestExpansion]);
 
     const viewStyle = {
         position: 'relative',
@@ -19,8 +19,8 @@ const Spacer = ({debugBorder, minSize = '0px'}) => {
         flexGrow: 1,
         flexShrink: 1,
         flexBasis: 0,
-        minWidth: direction === 'row' ? minSize : 'auto',
-        minHeight: direction === 'column' ? minSize : 'auto',
+        minWidth: axis === 'row' ? minSize : 'auto',
+        minHeight: axis === 'column' ? minSize : 'auto',
         border: debugBorder ? '1px solid red' : undefined,
     };
 
