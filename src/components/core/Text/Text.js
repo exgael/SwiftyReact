@@ -1,164 +1,115 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {useEnvironment} from "../../../contexts/index.js";
+import {textViewPropTypes} from "../View/viewPropTypes.js";
+import {generateTextViewStyle} from "./generateTextViewStyle.js";
 
 
 // Core Text component
 const Text = ({
-  children,
-  color, // Optional custom color
-  weight, // Optional font weight
-  italic = false, // Apply italic style
-  underline = false, // Apply underline
-  strikethrough = false, // Apply strikethrough
-  multilineTextAlignment = 'left', // Text alignment
-  kerning, // Letter spacing
-  customStyle, // Custom styles if needed
-  fontSize, // Specific font size passed by intrinsic components like LargeTitle, Title
-  fontWeight, // Specific font weight passed by intrinsic components
+  text,
   ...props
 }) => {
-  const { theme, typography } = useEnvironment(); // Access theme and typography from the environment
 
-  // Determine the color: custom or theme-based
-  const colorFromTheme = color || theme.primaryTextColor;
-
-  // Generate the style object dynamically based on context and props
-  const getStyle = () => ({
-    color: colorFromTheme, // Use custom color or default primary text color from theme
-    fontWeight: fontWeight || weight || typography.body.fontWeight, // Use intrinsic weight or custom
-    fontStyle: italic ? 'italic' : 'normal', // Conditionally apply italic
-    textDecoration: underline
-      ? 'underline'
-      : strikethrough
-        ? 'line-through'
-        : 'none', // Apply underline/strikethrough
-    fontSize: fontSize || typography.body.fontSize, // Use intrinsic size or fallback to body size
-    letterSpacing: kerning || 'normal', // Apply kerning
-    textAlign: multilineTextAlignment, // Text alignment
-    ...customStyle, // Merge custom styles if provided
-  });
+  const textStyle= generateTextViewStyle(props);
 
   return (
-    <span style={getStyle()} {...props}>
-      {children}
+    <span
+        style={textStyle}
+        onClick={props.onClick}
+        onMouseEnter={props.onMouseEnter}
+        onMouseLeave={props.onMouseLeave}
+        onTouchStart={props.onTouchStart}
+        onTouchEnd={props.onTouchEnd}
+        id={props.id}
+        ref={props.setRef}
+        {...props.custom} // Spread any custom attributes
+    >
+      {text}
     </span>
   );
 };
 
 // PropTypes validation
-Text.propTypes = {
-  children: PropTypes.node.isRequired,
-  color: PropTypes.string, // Optional color
-  weight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]), // Optional weight
-  italic: PropTypes.bool, // Apply italic
-  underline: PropTypes.bool, // Apply underline
-  strikethrough: PropTypes.bool, // Apply strikethrough
-  multilineTextAlignment: PropTypes.oneOf([
-    'left',
-    'center',
-    'right',
-    'justify',
-  ]), // Text alignment
-  kerning: PropTypes.string, // Letter spacing (kerning)
-  customStyle: PropTypes.object, // Custom styles
-  fontSize: PropTypes.string, // Passed font size for intrinsic components
-  fontWeight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]), // Passed font weight for intrinsic components
-};
+Text.propTypes = textViewPropTypes;
 
 // LargeTitle component
 export const LargeTitle = ({ children, ...props }) => {
   const { typography, theme } = useEnvironment(); // Get the typography from environment context
   return (
     <Text
+        text={text}
       fontSize={typography.largeTitle.fontSize}
       fontWeight={typography.largeTitle.fontWeight}
       color={theme.primaryTextColor}
       {...props}
-    >
-      {children}
-    </Text>
+    />
   );
 };
 
-LargeTitle.propTypes = {
-    children: PropTypes.node.isRequired,
-};
+LargeTitle.propTypes = textViewPropTypes;
 
 // Title component
-export const Title = ({ children, ...props }) => {
+export const Title = ({ text, ...props }) => {
   const { typography, theme } = useEnvironment();
   return (
     <Text
+      text={text}
       fontSize={typography.title.fontSize}
       fontWeight={typography.title.fontWeight}
       color={theme.primaryTextColor}
       {...props}
-    >
-      {children}
-    </Text>
+    />
   );
 };
 
-Title.propTypes = {
-    children: PropTypes.node.isRequired,
-};
+Title.propTypes = textViewPropTypes;
 
 // Headline component
-export const Headline = ({ children, ...props }) => {
+export const Headline = ({ text, ...props }) => {
   const { typography, theme } = useEnvironment();
   return (
-    <Text
+      <Text
+          text={text}
       fontSize={typography.headline.fontSize}
       fontWeight={typography.headline.fontWeight}
       color={theme.primaryTextColor}
       {...props}
-    >
-      {children}
-    </Text>
+    />
   );
 };
 
-Headline.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+Headline.propTypes = textViewPropTypes;
 
 // Body component
-export const Body = ({ children, ...props }) => {
+export const Body = ({ text, ...props }) => {
   const { typography, theme } = useEnvironment();
   return (
     <Text
+        text={text}
       fontSize={typography.body.fontSize}
       fontWeight={typography.body.fontWeight}
       color={theme.primaryTextColor}
       {...props}
-    >
-      {children}
-    </Text>
+    />
   );
 };
 
-Body.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+Body.propTypes = textViewPropTypes;
 
 // Caption component
-export const Caption = ({ children, ...props }) => {
+export const Caption = ({ text, ...props }) => {
   const { typography, theme } = useEnvironment();
   return (
     <Text
+        text={text}
       fontSize={typography.caption.fontSize}
       fontWeight={typography.caption.fontWeight}
       color={theme.primaryTextColor}
       {...props}
-    >
-      {children}
-    </Text>
+    />
   );
 };
 
-Caption.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+Caption.propTypes = textViewPropTypes;
 
 export default Text;
