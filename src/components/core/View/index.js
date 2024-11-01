@@ -1,1 +1,1 @@
-export { default as View } from './View.js';
+export { ContainerView } from './ContainerView';
