@@ -1,5 +1,11 @@
 # @exgael/swiftyreact
 
+## 0.2.0
+
+### Minor Changes
+
+- core component added and amelioration
+
 ## 0.1.0
 
 ### Minor Changes
