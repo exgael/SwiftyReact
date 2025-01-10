@@ -1,1 +1,2 @@
-export { View } from './View/index.js';
+export { ContainerView, stackPropTypes } from'./ContainerView/index.js';
+export { coreModifiersPropTypes, generateCoreViewStyles } from './modifiers/index.js';

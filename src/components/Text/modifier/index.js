@@ -1,0 +1,1 @@
+export {  textViewPropTypes } from './textViewPropTypes.js';

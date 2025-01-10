@@ -1,46 +1,37 @@
+import React from 'react';
 import {useContext} from "react";
 import {StackContext} from "../StackContext/index.js";
 import {ViewContext} from "../../core/View/ViewContext.js";
-import {View} from "../../core/index.js";
 import PropTypes from "prop-types";
 
-const Spacer = ({
-                           debugBorder,
-                           minSize = '0px',
-                           ...props
-                       }) => {
-    const { direction } = useContext(StackContext);
+const Spacer = ({debugBorder, minSize = '0px'}) => {
+    const { axis } = useContext(StackContext);
     const { requestExpansion } = useContext(ViewContext);
 
     React.useEffect(() => {
         // Spacer requests expansion in its stack’s direction (horizontal or vertical)
-        requestExpansion(direction);
-    }, [direction, requestExpansion]);
+        requestExpansion(axis);
+    }, [axis, requestExpansion]);
+
+    const viewStyle = {
+        position: 'relative',
+        boxSizing: 'border-box',
+        flexGrow: 1,
+        flexShrink: 1,
+        flexBasis: 0,
+        minWidth: axis === 'row' ? minSize : 'auto',
+        minHeight: axis === 'column' ? minSize : 'auto',
+        border: debugBorder ? '1px solid red' : undefined,
+    };
 
     return (
-        <View
-            debugBorder={debugBorder}
-            direction={direction}
-            style={{
-                flexGrow: 1,
-                flexShrink: 1,
-                flexBasis: 0,
-                minWidth: direction === 'row' ? minSize : 'auto',
-                minHeight: direction === 'column' ? minSize : 'auto',
-            }}
-            {...props}
-        />
+        <div style={viewStyle} />
     );
 };
 
 Spacer.propTypes = {
-    debugBorder: PropTypes.string,
-    minSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-Spacer.defaultProps = {
-    debugBorder: null,
-    minSize: '0px',
+    debugBorder: PropTypes.bool,
+    minSize: PropTypes.string
 };
 
 export default Spacer;

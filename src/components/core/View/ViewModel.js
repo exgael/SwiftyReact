@@ -9,11 +9,11 @@ export const useViewModel = (requestParentExpansion) => {
     const [shouldExpandHorizontally, setShouldExpandHorizontally] = useState(false);
     const [shouldExpandVertically, setShouldExpandVertically] = useState(false);
 
-    const requestExpansion = (expansionDirection) => {
-        if (expansionDirection === 'row') {
+    const requestExpansion = (expansionAxis) => {
+        if (expansionAxis === 'row') {
             setShouldExpandHorizontally(true);
             requestParentExpansion('row'); // Notify parent to expand horizontally
-        } else if (expansionDirection === 'column') {
+        } else if (expansionAxis === 'column') {
             setShouldExpandVertically(true);
             requestParentExpansion('column'); // Notify parent to expand vertically
         }
