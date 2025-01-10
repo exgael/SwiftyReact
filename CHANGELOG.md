@@ -1,5 +1,15 @@
 # @exgael/swiftyreact
 
+## 0.1.0
+
+### Minor Changes
+
+- 2766972: Basic components added
+
+### Patch Changes
+
+- 957c58d: Fix imports
+
 ## 0.0.6
 
 ### Patch Changes

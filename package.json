@@ -2,7 +2,7 @@
   "name": "@exgael/swiftyreact",
   "author": "exgael",
   "description": "SwiftUI style components for ReactJS",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -32,7 +32,8 @@
     "lint:fix": "eslint 'src/**/*.{js,jsx}' --fix",
     "release": "npm run build && changeset publish",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "husky"
   },
   "keywords": [
     "Swift",
@@ -48,6 +49,7 @@
     "prop-types": "^15.8.1",
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-router-dom": "^7.1.1",
     "webpack": "^5.95.0",
     "webpack-cli": "^5.1.4",
     "webpack-node-externals": "^3.0.0"

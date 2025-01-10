@@ -1,5 +1,5 @@
 import React from 'react';
-import { HStack } from "../components/index.js";
+import {Text, HStack, Scene} from "../components/index.js";
 
 export default {
     title: 'Layout/HStack',
@@ -17,12 +17,16 @@ export default {
 
 const Template = ({ ...args }) => {
     const childrenArray = Array.from({ length: args.numberOfChildren }, (_, i) => (
-        <div style={{ border: "1px solid black" }} key={i}>
-            Child {i + 1}
-        </div>
+        <Text text={ `Child ${i + 1}`} border={"1px solid black"} key={i}/>
     ));
     delete args.numberOfChildren;
-    return <HStack {...args}>{childrenArray}</HStack>;
+    return  (
+        <Scene>
+            <HStack {...args}>
+                {childrenArray}
+            </HStack>
+        </Scene>
+    );
 };
 
 export const Default = Template.bind({});

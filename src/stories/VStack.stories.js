@@ -1,5 +1,5 @@
 import React from 'react';
-import { VStack } from "../components/index.js";
+import {VStack, Text, Scene} from "../components/index.js";
 
 export default {
     title: 'Layout/VStack',
@@ -17,12 +17,16 @@ export default {
 
 const Template = ({ ...args }) => {
     const childrenArray = Array.from({ length: args.numberOfChildren }, (_, i) => (
-        <div style={{ border: "1px solid black" }} key={i}>
-            Child {i + 1}
-        </div>
+        <Text text={ `Child ${i + 1}`} debugBorder={true} key={i}/>
     ));
     delete args.numberOfChildren;
-    return <VStack {...args}>{childrenArray}</VStack>;
+    return (
+        <Scene>
+            <VStack {...args}>
+                {childrenArray}
+            </VStack>
+        </Scene>
+    );
 };
 
 export const Default = Template.bind({});

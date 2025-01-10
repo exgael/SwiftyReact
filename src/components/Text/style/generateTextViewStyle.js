@@ -1,4 +1,7 @@
-export const generateTextStyles = (props) => {
+import {generateCoreViewStyles} from "../../core/index.js";
+
+
+const generateTextStyles = (props) => {
     const {
         // **Text Styling Modifiers**
         fontSize,
@@ -116,3 +119,17 @@ export const generateTextStyles = (props) => {
 function formatLengthUnit(value) {
     return typeof value === 'number' ? `${value}px` : value;
 }
+
+export const generateTextViewStyle = (
+    props
+) => {
+    // core style
+    const baseStyles = generateCoreViewStyles(props)
+    const textStyles = generateTextStyles(props)
+
+    // Merge base styles and stack-specific styles
+    return {
+        ...baseStyles,
+        ...textStyles,
+    };
+};

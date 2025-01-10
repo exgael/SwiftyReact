@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import {coreModifiersPropTypes} from "../../core/index.js";
 
 /**
  * **fontSize**: Sets the font size.
@@ -181,7 +182,7 @@ const fontVariant = PropTypes.oneOfType([
  * PropTypes definitions for text-specific modifiers.
  * These modifiers can be applied to text components to control typography and text styling.
  */
-export const textModifiersPropTypes = {
+const textModifiersPropTypes = {
     fontSize,
     clampedFontSize,
     fontWeight,
@@ -203,3 +204,8 @@ export const textModifiersPropTypes = {
     fontFamily,
     fontVariant,
 };
+
+export const textViewPropTypes= {
+    ...coreModifiersPropTypes,
+    ...textModifiersPropTypes
+}

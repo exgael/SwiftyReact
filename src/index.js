@@ -6,11 +6,7 @@ export {
     ZStack,
     Divider,
     ForEach,
-    LargeTitle,
-    Title,
-    Headline,
-    Body,
-    Caption
+    Button
 } from './components/index.js';
 export { useEnvironment } from './contexts/index.js';
 

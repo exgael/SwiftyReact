@@ -1,8 +1,7 @@
 import React from 'react';
 import {StackContext} from "../StackContext/index.js";
-import {View} from "../../core/index.js";
 import propTypes from 'prop-types';
-
+import {ContainerView} from "../../core/index.js";
 
 const ZStack = ({
                     debugBorder,
@@ -17,7 +16,7 @@ const ZStack = ({
 
     return (
         <StackContext.Provider value={{ direction: 'z' }}>
-            <View
+            <ContainerView
                 debugBorder={debugBorder}
                 style={{
                     position: 'relative', // Allow children to stack on top of each other
@@ -29,7 +28,7 @@ const ZStack = ({
                 {...props}
             >
                 {React.Children.map(children, (child, index) => (
-                    <View
+                    <ContainerView
                         key={index}
                         style={{
                             position: index === 0 ? 'relative' : 'absolute',
@@ -37,12 +36,13 @@ const ZStack = ({
                             left: 0,
                             right: 0,
                             bottom: 0,
+                            pointerEvents: index === 0 ? 'auto' : 'none',  // Optional for interactive handling
                         }}
                     >
                         {child}
-                    </View>
+                    </ContainerView>
                 ))}
-            </View>
+            </ContainerView>
         </StackContext.Provider>
     );
 };

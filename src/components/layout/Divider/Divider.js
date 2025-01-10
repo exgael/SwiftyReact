@@ -17,7 +17,7 @@ export const Divider = ({
     const { theme } = useEnvironment();
 
     return (
-        <View
+        <div
             style={{
                 width: isHorizontal ? length : thickness,
                 height: isHorizontal ? thickness : length,

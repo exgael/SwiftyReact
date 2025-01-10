@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { ViewContext } from '../ViewContext.js';
-import { useViewModel } from '../ViewModel.js';
-import { generateStackStyles } from "./generateContainerViewStyle.js"
-import { internal_StackViewPropTypes } from "../viewPropTypes.js";
-import { StackContext } from "../../../layout/StackContext/index.js";
+import { ViewContext } from '../View/ViewContext.js';
+import { useViewModel } from '../View/ViewModel.js';
+import { internal_StackViewPropTypes } from "./modifier/index.js";
+import { StackContext } from "../../layout/StackContext/index.js";
+import {generateStackStyles} from "./style/generateStackStyles.js";
 
 const ContainerView = ({ children, style, ...props }) => {
     const { requestExpansion: requestParentExpansion } = useContext(ViewContext);

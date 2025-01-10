@@ -1,8 +1,1 @@
-export {  coreModifiersPropTypes, generateCoreViewStyles } from './core';
-export {
-    layoutModifiersPropTypes,
-    internalLayoutModifiersPropTypes,
-    convertInternalLayoutPropsToStyles
-} from './layout';
-
-export {  textModifiersPropTypes } from './text';
+export { coreModifiersPropTypes, generateCoreViewStyles } from './core/index.js';

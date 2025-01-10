@@ -1,5 +1,5 @@
-import {stackPropTypes} from "../../core/View/viewPropTypes.js";
-import {ContainerView} from "../../core/View/index.js";
+import {ContainerView, stackPropTypes} from "../../core/index.js";
+
 
 /**
  * VStack component is a vertical stack layout component

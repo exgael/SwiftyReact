@@ -1,4 +1,4 @@
-import {getFlexAlignment} from "../alignment.js";
+import {getFlexAlignment} from "../../modifiers/alignment.js";
 
 /**
  * Converts internal layout props into a CSS-compatible style object for React components.

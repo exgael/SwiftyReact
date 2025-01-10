@@ -1,6 +1,6 @@
 import React from 'react';
-import {useEnvironment} from "../../../contexts/index.js";
 import PropTypes from "prop-types";
+import {useEnvironment} from "../../contexts/index.js";
 
 export const SceneSetup = ({ children }) => {
     const { theme } = useEnvironment();

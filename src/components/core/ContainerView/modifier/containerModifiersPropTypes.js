@@ -1,4 +1,6 @@
 import PropTypes from 'prop-types';
+import {coreModifiersPropTypes} from "../../modifiers/index.js";
+
 
 /**
  * **alignment**: Defines the alignment of children along the cross axis (matching VStack/HStack alignment).
@@ -24,14 +26,26 @@ const axis = PropTypes.oneOf(['row', 'column']);
 /**
  * PropTypes definitions for layout-specific modifiers. These modifiers can be applied to text components to control layout.
  */
-export const layoutModifiersPropTypes = {
+const containerModifiersPropTypes = {
     alignment,
     spacing,
 };
 
-export const internalLayoutModifiersPropTypes = {
+const internalLayoutModifiersPropTypes = {
     alignment,
     spacing,
     axis,
     style: PropTypes.object,
 }
+
+export const stackPropTypes= {
+    children: PropTypes.node.isRequired,
+    ...coreModifiersPropTypes,
+    ...containerModifiersPropTypes
+};
+
+export const internal_StackViewPropTypes= {
+    children: PropTypes.node.isRequired,
+    ...coreModifiersPropTypes,
+    ...internalLayoutModifiersPropTypes,
+};
