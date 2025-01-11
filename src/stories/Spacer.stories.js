@@ -1,5 +1,5 @@
 import React from 'react';
-import {VStack, HStack, Spacer, Text, Scene} from "../components/index.js";
+import {VStack, HStack, Spacer, Text, Scene} from "../components";
 
 const mainAxisAlignmentMapping = {
     leading: 'flex-start',

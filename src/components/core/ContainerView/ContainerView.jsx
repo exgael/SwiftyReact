@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { ViewContext } from '../View/ViewContext.js';
 import { useViewModel } from '../View/ViewModel.js';
-import { internal_StackViewPropTypes } from "./modifier/index.js";
+import { internal_StackViewPropTypes } from "./modifier";
 import { StackContext } from "../../layout/StackContext/index.js";
 import {generateStackStyles} from "./style/generateStackStyles.js";
 
-const ContainerView = ({ children, style, ...props }) => {
+export const ContainerView = ({ children, style, ...props }) => {
     const { requestExpansion: requestParentExpansion } = useContext(ViewContext);
     const {
         shouldExpandHorizontally,
@@ -45,5 +45,3 @@ const ContainerView = ({ children, style, ...props }) => {
 };
 
 ContainerView.propTypes = internal_StackViewPropTypes;
-
-export default ContainerView;

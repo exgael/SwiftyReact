@@ -1,1 +1,1 @@
-export { default as StackContext } from './StackContext.js';
+export { default as StackContext } from './StackContext';

@@ -2,9 +2,9 @@ import React, { createContext, useContext } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import { SceneSetup } from './SceneSetup.js';
-import EnvironmentProvider from "../../contexts/EnvironmentContext/EnvironmentContext.js";
-import {ContainerView} from "../core/index.js";
+import {SceneSetup} from './SceneSetup';
+import {ContainerView} from "../core";
+import {EnvironmentProvider} from "../../contexts/EnvironmentContext";
 
 const SceneContext = createContext({
     safeArea: { top: 0, right: 0, bottom: 0, left: 0 },
@@ -12,7 +12,7 @@ const SceneContext = createContext({
 
 export const useSceneContext = () => useContext(SceneContext);
 
-const Scene = ({
+export const Scene = ({
                    children,
                    safeArea = { top: 0, right: 0, bottom: 0, left: 0 },
                    style = {},
@@ -62,5 +62,3 @@ Scene.propTypes = {
     }),
     style: PropTypes.object,
 };
-
-export default Scene;

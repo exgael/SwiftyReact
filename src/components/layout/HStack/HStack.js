@@ -1,4 +1,4 @@
-import {ContainerView, stackPropTypes} from "../../core/index.js";
+import {ContainerView, stackPropTypes} from "../../core";
 
 /**
  * HStack component is a horizontal stack layout component

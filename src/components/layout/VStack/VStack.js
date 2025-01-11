@@ -1,4 +1,4 @@
-import {ContainerView, stackPropTypes} from "../../core/index.js";
+import {ContainerView, stackPropTypes} from "../../core";
 
 
 /**

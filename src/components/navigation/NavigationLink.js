@@ -1,7 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
-import { ContainerView, coreModifiersPropTypes } from "../core/index.js";
+import { ContainerView, coreModifiersPropTypes } from "../core";
 
 /**
  * NavigationLink component behaves like a SwiftUI-style navigation link.

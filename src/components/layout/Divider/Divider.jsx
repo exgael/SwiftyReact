@@ -1,5 +1,4 @@
-import {useEnvironment} from "../../../contexts/index.js";
-import {View} from "../../core/index.js";
+import {useEnvironment} from "../../../contexts";
 import propTypes from 'prop-types';
 
 export const Divider = ({
@@ -38,5 +37,3 @@ Divider.propTypes = {
     margin: propTypes.oneOfType([propTypes.string, propTypes.number]),
     style: propTypes.object,
 };
-
-export default Divider;

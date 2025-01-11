@@ -284,5 +284,3 @@ export const EnvironmentProvider = ({ children }) => {
 EnvironmentProvider.propTypes = {
     children: propTypes.node,
 };
-
-export default EnvironmentProvider;
