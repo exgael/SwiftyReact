@@ -1,4 +1,4 @@
-import {generateCoreViewStyles} from "../../core/index.js";
+import {generateCoreViewStyles} from "../../core";
 
 
 const generateTextStyles = (props) => {

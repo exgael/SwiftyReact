@@ -1,7 +1,7 @@
 import React from 'react';
-import {StackContext} from "../StackContext/index.js";
+import {StackContext} from "../StackContext/index";
 import propTypes from 'prop-types';
-import {ContainerView} from "../../core/index.js";
+import {ContainerView} from "../../core";
 
 const ZStack = ({
                     debugBorder,

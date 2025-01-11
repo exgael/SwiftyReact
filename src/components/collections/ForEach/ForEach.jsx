@@ -15,7 +15,7 @@ const generateObjectHash = item => {
  * ForEach component
  * @type {React.NamedExoticComponent<{readonly data?: *, readonly viewBuilder?: *, readonly style?: *, readonly events?: *}>}
  */
-const ForEach = React.memo(({ data, viewBuilder, style, events }) => {
+export const ForEach = React.memo(({ data, viewBuilder, style, events }) => {
     const foreachStyle = {
         display: 'contents',
         ...style,
@@ -50,5 +50,3 @@ ForEach.defaultProps = {
 };
 
 ForEach.displayName = 'ForEach';
-
-export default ForEach;

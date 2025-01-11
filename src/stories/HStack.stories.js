@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, HStack, Scene} from "../components/index.js";
+import {Text, HStack, Scene} from "../components";
 
 export default {
     title: 'Layout/HStack',

@@ -1,1 +1,1 @@
-export { default as Divider } from './Divider.js';
+export { Divider } from './Divider';

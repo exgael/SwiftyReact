@@ -1,5 +1,11 @@
 # @exgael/swiftyreact
 
+## 0.2.1
+
+### Patch Changes
+
+- change bundler
+
 ## 0.2.0
 
 ### Minor Changes

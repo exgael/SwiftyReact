@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import {useEnvironment} from "../../contexts/index.js";
-import {generateTextViewStyle} from "./style/index.js";
-import {textViewPropTypes} from "./modifier/index.js";
+import {useEnvironment} from "../../contexts";
+import {generateTextViewStyle} from "./style/index";
+import {textViewPropTypes} from "./modifier/index";
 
 // Text component with variant support
-const Text = ({
+export const Text = ({
                 text,
                 variant = "body", // Default to "body" if no variant is provided
                 ...props
@@ -53,5 +53,3 @@ Text.propTypes = {
   ...textViewPropTypes,
   variant: PropTypes.oneOf(["largeTitle", "title", "headline", "body", "caption"]),
 };
-
-export default Text;

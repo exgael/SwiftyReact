@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Text, Scene, NavigationLink, VStack, Spacer} from "../components/index.js";
+import {Button, Text, Scene, NavigationLink, VStack, Spacer} from "../components";
 
 export default {
     title: 'Button',

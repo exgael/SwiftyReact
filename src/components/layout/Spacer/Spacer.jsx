@@ -4,7 +4,7 @@ import {StackContext} from "../StackContext/index.js";
 import {ViewContext} from "../../core/View/ViewContext.js";
 import PropTypes from "prop-types";
 
-const Spacer = ({debugBorder, minSize = '0px'}) => {
+export const Spacer = ({debugBorder, minSize = '0px'}) => {
     const { axis } = useContext(StackContext);
     const { requestExpansion } = useContext(ViewContext);
 
@@ -33,5 +33,3 @@ Spacer.propTypes = {
     debugBorder: PropTypes.bool,
     minSize: PropTypes.string
 };
-
-export default Spacer;

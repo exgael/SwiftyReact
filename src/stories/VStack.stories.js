@@ -1,5 +1,5 @@
 import React from 'react';
-import {VStack, Text, Scene} from "../components/index.js";
+import {VStack, Text, Scene} from "../components";
 
 export default {
     title: 'Layout/VStack',

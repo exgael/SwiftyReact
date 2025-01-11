@@ -1,4 +1,4 @@
-import {generateCoreViewStyles} from "../../index.js";
+import {generateCoreViewStyles} from "../../index.jsx";
 import {convertInternalLayoutPropsToStyles} from "./to_css_layout.js";
 
 export const generateStackStyles = (

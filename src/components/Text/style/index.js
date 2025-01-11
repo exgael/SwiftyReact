@@ -1,1 +1,1 @@
-export {generateTextViewStyle} from './generateTextViewStyle.js';
+export {generateTextViewStyle} from './generateTextViewStyle';

@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
-import {ContainerView, coreModifiersPropTypes} from "../core/index.js";
-import { useEnvironment } from "../../contexts/index.js";
+import {ContainerView, coreModifiersPropTypes} from "../core";
+import {useEnvironment} from "../../contexts";
 
-const Button = ({ children, action, style = {}, ...props }) => {
+export const Button = ({ children, action, style = {}, ...props }) => {
     const { theme } = useEnvironment();
 
     return ContainerView({
@@ -26,5 +26,3 @@ Button.propTypes = {
     action: PropTypes.func,              // The click handler function
     style: PropTypes.object,             // Custom styles to override the button container style
 };
-
-export default Button;

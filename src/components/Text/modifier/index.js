@@ -1,1 +1,1 @@
-export {  textViewPropTypes } from './textViewPropTypes.js';
+export {  textViewPropTypes } from './textViewPropTypes';

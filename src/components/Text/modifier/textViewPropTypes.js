@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import {coreModifiersPropTypes} from "../../core/index.js";
+import {coreModifiersPropTypes} from "../../core";
 
 /**
  * **fontSize**: Sets the font size.
