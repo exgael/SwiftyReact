@@ -1,1 +1,0 @@
-export { mainAxisAlignmentMapping, crossAxisAlignmentMapping } from './alignmentMapping.js';

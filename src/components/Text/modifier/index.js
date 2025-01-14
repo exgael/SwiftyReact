@@ -1,1 +1,0 @@
-export {  textViewPropTypes } from './textViewPropTypes';
