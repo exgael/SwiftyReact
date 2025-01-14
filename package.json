@@ -2,7 +2,7 @@
   "name": "@exgael/swiftyreact",
   "author": "exgael",
   "description": "SwiftUI style components for ReactJS",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/exgael/SwiftyReact.git"
