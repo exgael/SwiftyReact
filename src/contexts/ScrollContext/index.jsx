@@ -1,1 +1,0 @@
-export { ScrollProvider, useScroll } from './ScrollContext.jsx';
