@@ -1,5 +1,11 @@
 # @exgael/swiftyreact
 
+## 0.3.1
+
+### Patch Changes
+
+- rm browser router
+
 ## 0.3.0
 
 ### Minor Changes

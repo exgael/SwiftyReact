@@ -1,5 +1,4 @@
 import React, {createContext, CSSProperties, ReactNode, useContext} from 'react';
-import {BrowserRouter} from 'react-router-dom';
 import {SceneSetup} from './SceneSetup';
 import {ContainerView} from '../core';
 import {EnvironmentProvider} from '../../contexts/EnvironmentContext';
@@ -43,24 +42,22 @@ export const Scene: React.FC<SceneProps> = ({
     };
 
     return (
-        <BrowserRouter>
-            <SceneContext.Provider value={{safeArea}}>
-                <EnvironmentProvider>
-                    <SceneSetup>
-                        <ContainerView
-                            // Bedrock
-                            axis={"column"}
-                            alignment={"center"}
-                            spacing={0}
-                            // Styling
-                            style={sceneStyle}
-                            {...props}
-                        >
-                            {children}
-                        </ContainerView>
-                    </SceneSetup>
-                </EnvironmentProvider>
-            </SceneContext.Provider>
-        </BrowserRouter>
+        <SceneContext.Provider value={{safeArea}}>
+            <EnvironmentProvider>
+                <SceneSetup>
+                    <ContainerView
+                        // Bedrock
+                        axis={"column"}
+                        alignment={"center"}
+                        spacing={0}
+                        // Styling
+                        style={sceneStyle}
+                        {...props}
+                    >
+                        {children}
+                    </ContainerView>
+                </SceneSetup>
+            </EnvironmentProvider>
+        </SceneContext.Provider>
     );
 };
