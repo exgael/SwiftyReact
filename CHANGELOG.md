@@ -1,5 +1,11 @@
 # @exgael/swiftyreact
 
+## 0.3.0
+
+### Minor Changes
+
+- move to ts
+
 ## 0.2.1
 
 ### Patch Changes
