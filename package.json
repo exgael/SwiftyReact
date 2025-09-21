@@ -24,10 +24,12 @@
   "files": [
     "dist"
   ],
+  "types": ".dist/index.d.ts",
   "main": ".dist/swiftyreact.umd.cjs",
   "module": ".dist/swiftyreact.js",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/swiftyreact.js",
       "require": "./dist/swiftyreact.umd.cjs"
     }
@@ -35,10 +37,12 @@
   "scripts": {
     "init": "make install",
     "dev": "vite",
-    "build": "rm -rf dist && tsc -b && vite build",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json && vite build",
+    "build2": "rm -rf dist && tsc -b && vite build",
     "changeset": "changeset",
     "version": "changeset version",
-    "release": "npm run build && changeset publish"
+    "release": "npm run build && changeset publish",
+    "prepare": "husky"
   },
   "dependencies": {
     "prop-types": "^15.8.1",
@@ -60,7 +64,8 @@
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.18.2",
     "vite": "^6.0.5",
-    "vite-tsconfig-paths": "^5.1.4"
+    "vite-tsconfig-paths": "^5.1.4",
+    "husky": "^9.1.7"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",

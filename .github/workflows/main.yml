@@ -4,6 +4,9 @@ on:
     branches:
       - "**"
 
+env:
+  HUSKY: 0
+
 jobs:
   build:
     runs-on: ubuntu-latest
